@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+}
+
+body {
+  background-color: #363534;
+}
+
+.container {
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100rem;
+  height: 50rem;
+}
+
+.slide {
+  display: flex;
+  flex-shrink: 0;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  transition: all .4s ease;
+}
+
+.slide__img {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slides {
+  margin-bottom: 1rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #141414;
+  border-radius: 1.5rem;
+}
+
+.slider__controls {
+  margin-left: auto;
+  display: flex;
+  order: 3;
+}
+
+.slider__controls a {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+}
+
+.slider__controls span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: cornflowerblue;
+  transition: all .3s ease;
+  border: 0.4rem solid cornflowerblue;
+}
+
+.slider-controls__link:hover span {
+  border: 0.4rem solid rgb(161, 183, 224);
+  background-color: rgb(161, 183, 224);
+}
+
+/* For links (controls) */
+.slides:has(#slide-1:target) ~ .slider__controls  .slider-controls__link[href="#slide-1"] span {
+  background-color: transparent;
+}
+
+.slides:not(:has(.slide:target)) ~ .slider__controls .slider-controls__link:first-child span {
+  background-color: transparent;
+}
+.slides:not(:has(.slide:target)) .slide:first-child {
+  visibility: visible;
+  width: 100%;
+  opacity: 1;
+}
+.slides:not(:has(.slide:target)) ~ .sliders__text .slide__text:first-child {
+  opacity: 1;
+  height: auto;
+  width: auto;
+}
+
+.slides:has(#slide-2:target) ~ .slider__controls  .slider-controls__link[href="#slide-2"] span {
+  background-color: transparent;
+  /* border: 0.4rem solid rgb(25, 94, 223); */
+}
+
+.slides:has(#slide-3:target) ~ .slider__controls  .slider-controls__link[href="#slide-3"] span {
+  background-color: transparent;
+  /* border: 0.4rem solid rgb(25, 94, 223); */
+}
+
+.slides:has(#slide-4:target) ~ .slider__controls  .slider-controls__link[href="#slide-4"] span {
+  background-color: transparent;
+  /* border: 0.4rem solid rgb(25, 94, 223); */
+}
+
+.slides:has(#slide-5:target) ~ .slider__controls  .slider-controls__link[href="#slide-5"] span {
+  background-color: transparent;
+  /* border: 0.4rem solid rgb(25, 94, 223); */
+}
+
+.sliders__text {
+  order: 2;
+  font-size: 2.5rem;
+  align-self: center;
+  font-weight: 600;
+  color: #ebe9e8;
+}
+.sliders__text .slide__text {
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: all .5s ease-in;
+}
+
+.slides .slide:target {
+  visibility: visible;
+  width: 100%;
+  opacity: 1;
+}
+
+/* For text */
+.slides:has(#slide-1:target) ~ .sliders__text .slide__text-1,
+.slides:has(#slide-2:target) ~ .sliders__text .slide__text-2,
+.slides:has(#slide-3:target) ~ .sliders__text .slide__text-3,
+.slides:has(#slide-4:target) ~ .sliders__text .slide__text-4,
+.slides:has(#slide-5:target) ~ .sliders__text .slide__text-5 {
+  opacity: 1;
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    gap: 2rem;
+  }
+  .slider__controls {
+    margin: 0 auto;
+    order: 2;
+  }
+  .sliders__text {
+    width: 100%;
+    order: 3;
+  }
+}
