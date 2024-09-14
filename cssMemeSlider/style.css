@@ -181,4 +181,14 @@ body {
     width: 100%;
     order: 3;
   }
+
+  .slider__controls .slider-controls__link {
+    padding: 1rem;
+    width: 5.4rem;
+    height: 5.4rem;
+  }
+
+  .sliders__text {
+    font-size: 4.5rem;
+  }
 }
