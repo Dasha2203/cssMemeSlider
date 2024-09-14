@@ -94,6 +94,7 @@ body {
   width: 4rem;
   height: 4rem;
   flex-shrink: 0;
+  -webkit-tap-highlight-color:  transparent;
 }
 
 .slider__controls span {
@@ -109,6 +110,11 @@ body {
 .slider-controls__link:hover span {
   border: 0.4rem solid rgb(161, 183, 224);
   background-color: rgb(161, 183, 224);
+}
+
+.slider-controls__link:active span {
+  border: 0.4rem solid white;
+  background-color: white;
 }
 
 .sliders__text {
