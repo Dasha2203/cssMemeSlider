@@ -13,6 +13,24 @@ html {
   font-size: calc(100vw / 1920 * 10);
 }
 
+@media (max-width: 1024px) {
+  html {
+    font-size: calc(100vw / (768 * 1.5) * 10);
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: calc(100vw / (500 * 2.5) * 10);
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: calc(100vw / (375 * 3 ) * 10);
+  }
+}
+
 body {
   background-color: #363534;
 }
