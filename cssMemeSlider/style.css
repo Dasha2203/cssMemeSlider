@@ -86,7 +86,7 @@ body {
   order: 3;
 }
 
-.slider__controls a {
+.slider__controls .slider-controls__link {
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -111,45 +111,6 @@ body {
   background-color: rgb(161, 183, 224);
 }
 
-/* For links (controls) */
-.slides:has(#slide-1:target) ~ .slider__controls  .slider-controls__link[href="#slide-1"] span {
-  background-color: transparent;
-}
-
-.slides:not(:has(.slide:target)) ~ .slider__controls .slider-controls__link:first-child span {
-  background-color: transparent;
-}
-.slides:not(:has(.slide:target)) .slide:first-child {
-  visibility: visible;
-  width: 100%;
-  opacity: 1;
-}
-.slides:not(:has(.slide:target)) ~ .sliders__text .slide__text:first-child {
-  opacity: 1;
-  height: auto;
-  width: auto;
-}
-
-.slides:has(#slide-2:target) ~ .slider__controls  .slider-controls__link[href="#slide-2"] span {
-  background-color: transparent;
-  /* border: 0.4rem solid rgb(25, 94, 223); */
-}
-
-.slides:has(#slide-3:target) ~ .slider__controls  .slider-controls__link[href="#slide-3"] span {
-  background-color: transparent;
-  /* border: 0.4rem solid rgb(25, 94, 223); */
-}
-
-.slides:has(#slide-4:target) ~ .slider__controls  .slider-controls__link[href="#slide-4"] span {
-  background-color: transparent;
-  /* border: 0.4rem solid rgb(25, 94, 223); */
-}
-
-.slides:has(#slide-5:target) ~ .slider__controls  .slider-controls__link[href="#slide-5"] span {
-  background-color: transparent;
-  /* border: 0.4rem solid rgb(25, 94, 223); */
-}
-
 .sliders__text {
   order: 2;
   font-size: 2.5rem;
@@ -157,6 +118,7 @@ body {
   font-weight: 600;
   color: #ebe9e8;
 }
+
 .sliders__text .slide__text {
   overflow: hidden;
   opacity: 0;
@@ -169,6 +131,32 @@ body {
   width: 100%;
   opacity: 1;
 }
+
+/* For links (controls) */
+.slides:not(:has(.slide:target)) ~ .slider__controls .slider-controls__link:first-child span {
+  background-color: transparent;
+}
+
+.slides:not(:has(.slide:target)) .slide:first-child {
+  visibility: visible;
+  width: 100%;
+  opacity: 1;
+}
+
+.slides:not(:has(.slide:target)) ~ .sliders__text .slide__text:first-child {
+  opacity: 1;
+  height: auto;
+  width: auto;
+}
+
+.slides:has(#slide-1:target) ~ .slider__controls  .slider-controls__link[href="#slide-1"] span,
+.slides:has(#slide-2:target) ~ .slider__controls  .slider-controls__link[href="#slide-2"] span,
+.slides:has(#slide-3:target) ~ .slider__controls  .slider-controls__link[href="#slide-3"] span, 
+.slides:has(#slide-4:target) ~ .slider__controls  .slider-controls__link[href="#slide-4"] span,
+.slides:has(#slide-5:target) ~ .slider__controls  .slider-controls__link[href="#slide-5"] span {
+  background-color: transparent;
+}
+
 
 /* For text */
 .slides:has(#slide-1:target) ~ .sliders__text .slide__text-1,
